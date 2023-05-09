@@ -4,39 +4,39 @@ Ext.define("ModernTunes.model.Tune", {
   fields: [
     {
       name: "id",
-      mapping: "id",
+      mapping: 'id.attributes["im:id"]',
     },
     {
       name: "title",
-      mapping: "name",
+      mapping: '["im:name"].label',
     },
     {
       name: "image",
-      mapping: "artworkUrl100",
+      mapping: '["im:image"][2].label',
     },
     {
       name: "artist",
-      mapping: "artistName",
+      mapping: '["im:artist"].label',
     },
     {
       name: "itunesstore",
-      mapping: "url",
+      mapping: "link[0].attributes.href",
     },
     {
       name: "preview",
-      mapping: "artworkUrl100",
+      mapping: "link[1].attributes.href",
     },
     {
       name: "release_date",
-      mapping: "releaseDate",
+      mapping: '["im:releaseDate"].attributes.label',
     },
   ],
   proxy: {
     type: "jsonp",
-    url: "https://rss.applemarketingtools.com/api/v2/ru/music/most-played/50/music-videos.json",
+    url: "https://itunes.apple.com/us/rss/topmusicvideos/limit=50/json",
     reader: {
       type: "json",
-      rootProperty: "feed.results",
+      rootProperty: "feed.entry",
     },
   },
 });
