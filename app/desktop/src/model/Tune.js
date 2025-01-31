@@ -32,8 +32,9 @@ Ext.define("ModernTunes.model.Tune", {
     },
   ],
   proxy: {
-    type: "jsonp",
-    url: "https://itunes.apple.com/us/rss/topmusicvideos/limit=50/json",
+    type: "json",
+    // url: "https://itunes.apple.com/us/rss/topmusicvideos/limit=50/json",
+    url: 'https://rss.marketingtools.apple.com/api/v2/ru/music/most-played/10/music-videos.json'
     reader: {
       type: "json",
       rootProperty: "feed.entry",
