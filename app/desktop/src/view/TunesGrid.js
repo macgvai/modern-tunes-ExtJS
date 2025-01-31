@@ -7,7 +7,7 @@ Ext.define("ModernTunes.view.TunesGrid", {
   requires: ["Ext.grid.column.Column", "Ext.grid.cell.*"],
   cls: "tunes-grid",
   defaults: {
-    height: 54,
+    height: 55,
   },
   columns: [
     {
@@ -33,5 +33,7 @@ Ext.define("ModernTunes.view.TunesGrid", {
         encodeHtml: false,
       },
     },
+
+
   ],
 });
