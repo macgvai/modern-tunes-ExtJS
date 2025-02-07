@@ -15,8 +15,8 @@
       "theme": "theme-material",
       "sass": {
         "generated": {
-          "var": "${build.id}/sass/save.scss",
-          "src": "${build.id}/sass/save"
+          "var": "modern/sass/save.scss",
+          "src": "modern/sass/save"
         }
       }
     }
@@ -60,6 +60,10 @@
   },
 
   "js": [
+    {
+      "path": "app.js",
+      "bundle": true
+    }
   ],
 
   "classic": {"js": []},
@@ -79,13 +83,9 @@
   },
 
   "production": {
-    "js": [
-      {"path": "app.js", "bundle": true},
-      {"path": "${app.webpack.bundle}", "compress": false }
-    ],
     "output": {
       "appCache": {
-        "enable": false,
+        "enable": true,
         "path": "cache.appcache"
       }
     },
@@ -99,27 +99,20 @@
       "type": "yui"
     }
   },
-  "testing": {
-      "js": [
-        {"path": "app.js", "bundle": true},
-        {"path": "${app.webpack.bundle}", "compress": false }
-      ]
-   },
+
+  "testing": {},
+
   "development": {
-    "js": [
-      {"path": "app.js", "bundle": true},
-      {"path": "main.js"}
-    ],
     "watch": {
       "delay": 250
     }
   },
 
   "bootstrap": {
-    "base": "${app.dir}",
-    "manifest": "generatedFiles/${build.id}.json",
-    "microloader": "generatedFiles/bootstrap.js",
-    "css": "generatedFiles/bootstrap.css"
+    "base": "${app.dir}/generatedFiles",
+    "manifest": "${build.id}.json",
+    "microloader": "bootstrap.js",
+    "css": "bootstrap.css"
   },
 
   "cache": {
@@ -137,5 +130,5 @@
   "archivePath": "archive/${build.id}",
 
   "ignore": ["(^|/)CVS(/?$|/.*?$)"],
-  "id": "a8f3ac25-3f24-4fae-9031-f5a7d69011b9"
+  "id": "90ee224d-c7ac-413a-a168-1729c081efe5"
 }
