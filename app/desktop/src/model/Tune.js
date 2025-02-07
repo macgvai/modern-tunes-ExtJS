@@ -25,7 +25,7 @@ Ext.define('ModernTunes.model.Tune', {
     }],
     proxy: {
         type: 'rest',
-        url: '/app/desktop/src/store/ituns.json',
+        url: '/modern-tunes-ExtJS/app/desktop/src/store/ituns.json',
         reader: {
             type: 'json',
             rootProperty: 'feed.entry'
